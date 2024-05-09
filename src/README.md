@@ -23,6 +23,7 @@ src
 │   ├── xxx.tsx
 │   └── yyy
 │       └── zzz.tsx
+
 ├── hooks
 │   └── useXxx.tsx
 ├── components
@@ -41,6 +42,8 @@ src
 ```
 
 ## `features`
+
+- データフェッチが必要な動的に生成されるコンポーネントを管理
 
 ### `containers`
 
@@ -63,6 +66,8 @@ src
 - 一つのフェッチに対して一つのフックスを定義する
 
 ## `components`
+
+- ページに表示される最大単位のコンポーネントを管理
 
 ### `base`
 
