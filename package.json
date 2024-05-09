@@ -12,7 +12,8 @@
     "lint:ci": "eslint --ext .ts,.tsx ./src",
     "test": "vitest --ui",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "typegen:scss": "typed-scss-modules src"
   },
   "dependencies": {
     "next": "14.2.3",
@@ -49,7 +50,9 @@
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unused-imports": "^3.1.0",
     "prettier": "^3.2.5",
+    "sass": "^1.77.0",
     "storybook": "^8.0.9",
+    "typed-scss-modules": "^8.0.1",
     "typescript": "^5"
   }
 }
