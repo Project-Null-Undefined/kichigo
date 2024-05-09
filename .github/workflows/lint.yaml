@@ -1,8 +1,6 @@
-name: Prettier & ESLint
+name: ESLint & Prettier
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
   push:
     branches:
       - main
@@ -10,9 +8,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  run-linters:
-    name: Run linters
+  lint:
+    name: Linters
     runs-on: ubuntu-latest
 
     steps:
@@ -20,18 +25,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 21
+          cache: "yarn"
 
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
+      - name: Install dependencies
         run: yarn install
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          eslint_args: --ext .ts,.tsx ./src
-          prettier_args: --check ./src/
+      - name: Lint
+        run: |
+          yarn lint:ci
+          yarn format:ci
