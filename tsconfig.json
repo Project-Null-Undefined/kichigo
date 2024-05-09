@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "rootDirs": [".", "__generated__/typed-scss-modules"],
     "lib": ["dom", "dom.iterable", "esnext"],
+    "strictNullChecks": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
