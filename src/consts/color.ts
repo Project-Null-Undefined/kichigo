@@ -14,3 +14,13 @@ export const COLOR_VALUES = getValues(COLOR);
  * カラーの型
  */
 export type Color = typeof COLOR;
+
+/**
+ * カラーのキーの型
+ */
+export type ColorKey = (typeof COLOR_KEYS)[number];
+
+/**
+ * カラーの値の型
+ */
+export type ColorValue = (typeof COLOR_VALUES)[number];
