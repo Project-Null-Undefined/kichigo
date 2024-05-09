@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write ./src/",
-    "lint": "eslint --ext .ts,.tsx ./src",
+    "format:ci": "prettier --check ./src/",
+    "lint": "eslint --ext .ts,.tsx ./src --fix",
+    "lint:ci": "eslint --ext .ts,.tsx ./src",
     "test": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
