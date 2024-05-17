@@ -1710,18 +1710,6 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-interactions@^8.0.9":
-  version "8.0.9"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-8.0.9.tgz#3282df8ce79b8df9b0d46670349164c50801b5b3"
-  integrity sha512-AMIdNcyM6DDAWvMitBJMqp1iPZND8AXB4QT4VZHGMKG2ngHNKktriEKpTfcRkfKPGTJs9T+71dWfm6/R4tticw==
-  dependencies:
-    "@storybook/global" "^5.0.0"
-    "@storybook/instrumenter" "8.0.9"
-    "@storybook/test" "8.0.9"
-    "@storybook/types" "8.0.9"
-    polished "^4.2.2"
-    ts-dedent "^2.2.0"
-
 "@storybook/addon-links@^8.0.9":
   version "8.0.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.0.9.tgz#1f7375896c8e2ffd28eec24edc0e938bc16525cd"
@@ -1751,6 +1739,13 @@
   dependencies:
     "@storybook/global" "^5.0.0"
     ts-dedent "^2.0.0"
+
+"@storybook/addon-styling-webpack@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-styling-webpack/-/addon-styling-webpack-1.0.0.tgz#a4d0d449b8e76135565bdc4745f9d0420edd2420"
+  integrity sha512-jo1kzn7pi+NA+LZxrWoRvW6w7dXIKY/BjTG80XX2uU92lIKT+X1k/9vYk/0KPVK3Bsf4tO6ToAuqIRyOk7MHtg==
+  dependencies:
+    "@storybook/node-logger" "^8.0.0-alpha.10"
 
 "@storybook/addon-toolbars@8.0.9":
   version "8.0.9"
@@ -2213,6 +2208,11 @@
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.0.9.tgz#0825e53bce014a8faa51029ab89e91b5eac1af8b"
   integrity sha512-5ajMdZFrYrjGLJOVDq7dlEQNFsgeLHymt4dCK9MulL/ciXykmXUZXE3Bye0wFy+I2qqDVvrvR8uzCvSFvm5MAQ==
 
+"@storybook/node-logger@^8.0.0-alpha.10":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.1.1.tgz#f321300cf3c00b224954603d023883522e05531c"
+  integrity sha512-l+B8eu3yBZfrHvCR/FVqGyObgA0KSLp+06NkWDMn0p7qu0tCTROquopKdn2gXKitZp8wGwhgJV56OvW5C12XQA==
+
 "@storybook/preset-react-webpack@8.0.9":
   version "8.0.9"
   resolved "https://registry.yarnpkg.com/@storybook/preset-react-webpack/-/preset-react-webpack-8.0.9.tgz#4070b62a34b23916d720893eb2b3043765eb13b6"
@@ -2327,7 +2327,7 @@
     fs-extra "^11.1.0"
     read-pkg-up "^7.0.1"
 
-"@storybook/test@8.0.9", "@storybook/test@^8.0.9":
+"@storybook/test@^8.0.9":
   version "8.0.9"
   resolved "https://registry.yarnpkg.com/@storybook/test/-/test-8.0.9.tgz#b7c60dca424a57f84d4f6be6c186037a8cc305dd"
   integrity sha512-bRd5tBJnPzR6UKbDXONWnFWtdkNOY99HMLDUWe5fTRo50GwkrpFBVqPflhdkruEeof0kAbBUbnoN2CIYgtnAFw==
