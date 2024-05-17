@@ -1,15 +1,17 @@
+import path from 'path';
+
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import type { Configuration } from 'webpack';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.stories.@(ts|tsx|mdx)'],
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
     '@storybook/addon-styling-webpack',
-    
-    '@chromatic-com/storybook',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -18,8 +20,12 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: ['../public'],
-  webpackFinal(config) {
+  webpackFinal(config: Configuration) {
+    config.resolve!.modules = [
+      ...(config.resolve!.modules || []),
+      path.resolve(__dirname, '../src/app/styles/colors.module.scss'),
+    ];
+
     config.resolve!.plugins = [...(config.resolve!.plugins || []), new TsconfigPathsPlugin()];
     return config;
   },
