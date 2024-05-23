@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "rootDirs": [".", "__generated__/typed-scss-modules"],
     "lib": ["dom", "dom.iterable", "esnext"],
+    "strictNullChecks": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.msx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
