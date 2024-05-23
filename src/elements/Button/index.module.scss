@@ -1,0 +1,13 @@
+.button {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: $transition;
+  content: attr(data-bgcolor);
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
