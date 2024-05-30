@@ -16,6 +16,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: ColorKey;
   outline?: ColorKey;
   backgroundColor?: ColorKey;
+  icon?: ReactElement;
 }
 
 export default function Button({
@@ -24,9 +25,10 @@ export default function Button({
   color = 'background',
   outline,
   backgroundColor,
+  icon,
   ...props
 }: Props): ReactElement {
-  const style: CSSProperties = {
+  const buttonStyle: CSSProperties = {
     backgroundColor: COLOR[backgroundColor ?? 'primary'],
     color: COLOR[color ?? 'background'],
     fontSize: BUTTON_SIZE[size ?? 'md'],
@@ -34,9 +36,25 @@ export default function Button({
     borderStyle: outline === undefined ? undefined : 'solid',
   };
 
+  const iconStyle: CSSProperties = {
+    fill: COLOR[color ?? 'background'],
+  };
+
+  const Icon =
+    icon === undefined
+      ? undefined
+      : () =>
+          React.cloneElement(icon, {
+            style: iconStyle,
+            height: BUTTON_SIZE[size ?? 'md'],
+            width: 'auto',
+            className: styles.icon,
+          });
+
   return (
-    <button {...props} className={styles.button} style={style} type="button">
-      {children}
+    <button {...props} className={styles.button} style={buttonStyle} type="button">
+      {Icon !== undefined && <Icon />}
+      <span className={styles.text}>{children}</span>
     </button>
   );
 }
