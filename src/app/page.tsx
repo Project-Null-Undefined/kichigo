@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 export default function Home(): ReactElement {
   return (
