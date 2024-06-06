@@ -13,7 +13,9 @@
     "test": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "typegen:scss": "typed-scss-modules src"
+    "typegen:scss": "typed-scss-modules src",
+    "prebuild": "yarn typegen:scss",
+    "predev": "yarn typegen:scss"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
