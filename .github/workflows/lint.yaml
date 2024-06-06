@@ -27,10 +27,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
+
+      - name: Generate TypeScript types
+        run: yarn typegen:scss
 
       - name: Lint
         run: |
