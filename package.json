@@ -56,6 +56,6 @@
     "sass": "^1.77.0",
     "storybook": "7.5.3",
     "typed-scss-modules": "^8.0.1",
-    "typescript": "^5"
+    "typescript": "^5.4.5"
   }
 }
