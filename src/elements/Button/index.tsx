@@ -10,14 +10,14 @@ const BUTTON_SIZE = {
   lg: '1.25rem',
 } as const;
 
-interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
+type Props = {
   size?: Size;
   children: string;
   color?: ColorKey;
   outline?: ColorKey;
   backgroundColor?: ColorKey;
   icon?: ReactElement;
-}
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;
 
 export default function Button({
   size = 'md',
