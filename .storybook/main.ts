@@ -1,5 +1,3 @@
-import path from 'path';
-
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import type { Configuration } from 'webpack';
 import type { StorybookConfig } from '@storybook/nextjs';
@@ -21,11 +19,6 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   webpackFinal(config: Configuration) {
-    config.resolve!.modules = [
-      ...(config.resolve!.modules || []),
-      path.resolve(__dirname, '../src/app/styles/colors.module.scss'),
-    ];
-
     config.resolve!.plugins = [...(config.resolve!.plugins || []), new TsconfigPathsPlugin()];
     return config;
   },
