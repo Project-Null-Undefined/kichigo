@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: $transition;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  .icon {
+    margin-left: 4px;
+    width: auto;
+    display: inline-block;
+    vertical-align: text-top;
+  }
+}
