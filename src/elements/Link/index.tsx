@@ -33,6 +33,7 @@ export default function Link({
     <NextLink
       {...props}
       className={`${className ?? ''} ${styles.link}`}
+      rel="noopener noreferrer"
       style={style}
       target={isExternal ? '_blank' : '_self'}
     >
