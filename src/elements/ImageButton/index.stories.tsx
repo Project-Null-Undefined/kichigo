@@ -15,7 +15,6 @@ export const Circle: Story = {
     src: logo.src,
     width: 100,
     height: 100,
-    style: { border: 'solid' },
   },
 };
 
@@ -25,7 +24,6 @@ export const Rounded: Story = {
     src: logo.src,
     width: 100,
     height: 100,
-    style: { border: 'solid' },
   },
 };
 
@@ -35,6 +33,5 @@ export const RoundedSmall: Story = {
     src: logo.src,
     width: 100,
     height: 100,
-    style: { border: 'solid' },
   },
 };

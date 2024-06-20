@@ -8,9 +8,9 @@ type Props = {
   radius: RadiusKey | 'circle';
   width: number;
   height: number;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
+} & Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'disabled' | 'name' | 'id'>;
 
-export default function ImageButton({ src, radius, width, height, style, ...props }: Props): ReactElement {
+export default function ImageButton({ src, radius, width, height, ...props }: Props): ReactElement {
   const buttonStyle: CSSProperties = {
     width,
     height,
@@ -18,7 +18,7 @@ export default function ImageButton({ src, radius, width, height, style, ...prop
   };
 
   return (
-    <button {...props} className={styles.button} style={{ ...style, ...buttonStyle }} type="button">
+    <button {...props} className={styles.button} style={buttonStyle} type="button">
       <Image alt="button" height={height} src={src} width={width} />
     </button>
   );
