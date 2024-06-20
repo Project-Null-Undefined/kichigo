@@ -1,5 +1,4 @@
 import { type CSSProperties, type ReactElement } from 'react';
-import styles from './index.module.scss';
 import { type Size } from '@/consts/size';
 
 const TEXT_SIZE = {
