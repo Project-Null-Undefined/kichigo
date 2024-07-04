@@ -1,22 +1,15 @@
 import { type CSSProperties, type ReactElement } from 'react';
-import { type Size } from '@/consts/size';
-
-const TEXT_SIZE = {
-  xs: '0.5rem',
-  sm: '0.75rem',
-  md: '1rem',
-  lg: '1.25rem',
-} as const;
+import { FONT_SIZE_MAP, type Size } from '@/consts/size';
 
 type Props = {
   size?: Size;
-  children: ReactElement;
+  children: string;
   bold?: boolean;
 };
 
 export default function TextBox({ size = 'md', children, bold = false }: Props): ReactElement {
   const textStyle: CSSProperties = {
-    fontSize: TEXT_SIZE[size],
+    fontSize: FONT_SIZE_MAP[size],
     fontWeight: bold ? 'bold' : 'normal',
   };
 
