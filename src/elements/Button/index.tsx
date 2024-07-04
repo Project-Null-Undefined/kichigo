@@ -1,14 +1,7 @@
 import React, { type ButtonHTMLAttributes, type CSSProperties, type ReactElement } from 'react';
 import styles from './index.module.scss';
 import { COLOR, type ColorKey } from '@/consts/color';
-import { type Size } from '@/consts/size';
-
-const BUTTON_SIZE = {
-  xs: '0.5rem',
-  sm: '0.75rem',
-  md: '1rem',
-  lg: '1.25rem',
-} as const;
+import { FONT_SIZE_MAP, type Size } from '@/consts/size';
 
 type Props = {
   size?: Size;
@@ -22,16 +15,16 @@ type Props = {
 export default function Button({
   size = 'md',
   children,
-  color = 'background',
+  color,
   outline,
   backgroundColor,
   icon,
   ...props
 }: Props): ReactElement {
   const buttonStyle: CSSProperties = {
-    backgroundColor: COLOR[backgroundColor ?? 'primary'],
-    color: COLOR[color ?? 'background'],
-    fontSize: BUTTON_SIZE[size ?? 'md'],
+    color: COLOR[color ?? 'primary'],
+    backgroundColor: COLOR[backgroundColor ?? 'transparent'],
+    fontSize: FONT_SIZE_MAP[size ?? 'md'],
     borderColor: outline === undefined ? undefined : COLOR[outline],
     borderStyle: outline === undefined ? undefined : 'solid',
   };
@@ -46,7 +39,7 @@ export default function Button({
       : () =>
           React.cloneElement(icon, {
             style: iconStyle,
-            height: BUTTON_SIZE[size ?? 'md'],
+            height: FONT_SIZE_MAP[size ?? 'md'],
             width: 'auto',
             className: styles.icon,
           });
