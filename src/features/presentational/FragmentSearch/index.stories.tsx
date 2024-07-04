@@ -8,4 +8,11 @@ const meta: Meta<typeof FragmentSearch> = {
 export default meta;
 type Story = StoryObj<typeof FragmentSearch>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    onClick: (input: string) => {
+      // eslint-disable-next-line no-console
+      console.log(input);
+    },
+  },
+};

@@ -23,7 +23,14 @@ export default function FragmentSearch({ onClick }: Props): ReactElement {
         type="svg"
         width={32}
       />
-      <input onChange={(e) => setSearchInput} placeholder="検索ワードを入力" type="text" />
+      <input
+        onChange={(e) => {
+          setSearchInput(e.target.value);
+        }}
+        placeholder="検索ワードを入力"
+        type="text"
+        value={searchInput}
+      />
     </div>
   );
 }
