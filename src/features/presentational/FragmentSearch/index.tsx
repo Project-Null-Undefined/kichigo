@@ -1,12 +1,13 @@
-import { useState, type ReactElement } from 'react';
+import { type HTMLAttributes, useState, type ReactElement } from 'react';
 import styles from './index.module.scss';
 import ImageButton from '@/elements/ImageButton';
 
 type Props = {
   onClick: (input: string) => void;
+  className?: HTMLAttributes<HTMLDivElement>['className'];
 };
 
-export default function FragmentSearch({ onClick }: Props): ReactElement {
+export default function FragmentSearch({ onClick, className }: Props): ReactElement {
   const [searchInput, setSearchInput] = useState('');
 
   const performSearch = (): void => {
@@ -14,7 +15,7 @@ export default function FragmentSearch({ onClick }: Props): ReactElement {
   };
 
   return (
-    <div className={styles.searchBox}>
+    <div className={`${styles.searchBox} ${className}`}>
       <ImageButton
         height={32}
         onClick={performSearch}

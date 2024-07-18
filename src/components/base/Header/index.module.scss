@@ -1,0 +1,21 @@
+.header {
+  padding-inline: 10px;
+  height: 75px;
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  position: sticky;
+  inset: 0 0 auto;
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .searchBox {
+    margin-inline: auto;
+  }
+
+  .notification {
+    cursor: pointer;
+  }
+}
