@@ -10,23 +10,27 @@ type Props = LinkProps & {
   children: ReactNode;
   color?: ColorKey;
   backgroundColor?: ColorKey;
+  outline?: ColorKey;
   isExternal: boolean;
   className?: string;
 };
 
 export default function Link({
   children,
-  size,
-  color,
-  backgroundColor,
+  size = 'md',
+  color = 'primary',
+  backgroundColor = 'transparent',
+  outline,
   isExternal = false,
   className,
   ...props
 }: Props): ReactElement {
   const style: CSSProperties = {
-    color: COLOR[color ?? 'primary'],
-    backgroundColor: COLOR[backgroundColor ?? 'transparent'],
-    fontSize: FONT_SIZE_MAP[size ?? 'md'],
+    color: COLOR[color],
+    backgroundColor: COLOR[backgroundColor],
+    fontSize: FONT_SIZE_MAP[size],
+    borderColor: outline === undefined ? undefined : COLOR[outline],
+    borderStyle: outline === undefined ? undefined : 'solid',
   };
 
   return (
