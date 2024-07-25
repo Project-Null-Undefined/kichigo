@@ -16,17 +16,17 @@ type Props = LinkProps & {
 
 export default function Link({
   children,
-  size,
-  color,
-  backgroundColor,
+  size = 'md',
+  color = 'primary',
+  backgroundColor = 'transparent',
   isExternal = false,
   className,
   ...props
 }: Props): ReactElement {
   const style: CSSProperties = {
-    color: COLOR[color ?? 'primary'],
-    backgroundColor: COLOR[backgroundColor ?? 'transparent'],
-    fontSize: FONT_SIZE_MAP[size ?? 'md'],
+    color: COLOR[color],
+    backgroundColor: COLOR[backgroundColor],
+    fontSize: FONT_SIZE_MAP[size],
   };
 
   return (
