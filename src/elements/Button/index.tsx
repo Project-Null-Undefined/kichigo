@@ -15,23 +15,21 @@ type Props = {
 export default function Button({
   size = 'md',
   children,
-  color,
+  color = 'primary',
+  backgroundColor = 'transparent',
   outline,
-  backgroundColor,
   icon,
   ...props
 }: Props): ReactElement {
   const buttonStyle: CSSProperties = {
-    color: COLOR[color ?? 'primary'],
-    backgroundColor: COLOR[backgroundColor ?? 'transparent'],
-    fontSize: FONT_SIZE_MAP[size ?? 'md'],
+    color: COLOR[color],
+    backgroundColor: COLOR[backgroundColor],
+    fontSize: FONT_SIZE_MAP[size],
     borderColor: outline === undefined ? undefined : COLOR[outline],
     borderStyle: outline === undefined ? undefined : 'solid',
   };
 
-  const iconStyle: CSSProperties = {
-    fill: COLOR[color ?? 'background'],
-  };
+  const iconStyle: CSSProperties = { fill: COLOR[color] };
 
   const Icon =
     icon === undefined
@@ -39,7 +37,7 @@ export default function Button({
       : () =>
           React.cloneElement(icon, {
             style: iconStyle,
-            height: FONT_SIZE_MAP[size ?? 'md'],
+            height: FONT_SIZE_MAP[size],
             width: 'auto',
             className: styles.icon,
           });
