@@ -11,14 +11,31 @@ type Story = StoryObj<typeof Link>;
 export const Default: Story = {
   args: {
     children: 'This is Link',
-    href: '/',
+    href: '.',
   },
 };
 
 export const External: Story = {
   args: {
     children: 'This is External Link',
-    href: '/',
+    href: '.',
     isExternal: true,
+  },
+};
+
+export const Filled: Story = {
+  args: {
+    children: 'This is Filled Link',
+    color: 'background',
+    backgroundColor: 'primary',
+    href: '.',
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    children: 'This is Outline Link',
+    outline: 'primary',
+    href: '.',
   },
 };
