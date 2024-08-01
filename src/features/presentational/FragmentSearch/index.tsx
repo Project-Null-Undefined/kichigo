@@ -1,18 +1,14 @@
-import { useState, type ReactElement } from 'react';
+import { type Dispatch, type SetStateAction, type ReactElement } from 'react';
 import styles from './index.module.scss';
 import ImageButton from '@/elements/ImageButton';
 
 type Props = {
-  onClick: (input: string) => void;
+  input: string;
+  performSearch: () => void;
+  setInput: Dispatch<SetStateAction<string>>;
 };
 
-export default function FragmentSearch({ onClick }: Props): ReactElement {
-  const [searchInput, setSearchInput] = useState('');
-
-  const performSearch = (): void => {
-    onClick(searchInput);
-  };
-
+export default function FragmentSearchPresentational({ input, setInput, performSearch }: Props): ReactElement {
   return (
     <div className={styles.searchBox}>
       <ImageButton
@@ -25,11 +21,11 @@ export default function FragmentSearch({ onClick }: Props): ReactElement {
       />
       <input
         onChange={(e) => {
-          setSearchInput(e.target.value);
+          setInput(e.target.value);
         }}
         placeholder="検索ワードを入力"
         type="text"
-        value={searchInput}
+        value={input}
       />
     </div>
   );
