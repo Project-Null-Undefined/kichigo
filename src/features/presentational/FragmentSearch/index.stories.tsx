@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import FragmentSearch from '.';
+import FragmentSearchPresentational from '.';
 
-const meta: Meta<typeof FragmentSearch> = {
-  component: FragmentSearch,
+const meta: Meta<typeof FragmentSearchPresentational> = {
+  component: FragmentSearchPresentational,
 };
 
 export default meta;
-type Story = StoryObj<typeof FragmentSearch>;
+type Story = StoryObj<typeof FragmentSearchPresentational>;
 
 export const Default: Story = {
-  args: {
-  },
+  args: {},
 };
