@@ -1,0 +1,34 @@
+.postList {
+  margin: 0;
+
+  .postContainer {
+    padding: 16px 0;
+    gap: 16px;
+    border-bottom: 1px solid #e0e0e0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .tagContainer {
+        display: flex;
+        gap: 8px;
+      }
+
+      .date {
+        font-size: 14px;
+        color: #757575;
+      }
+    }
+  }
+}
